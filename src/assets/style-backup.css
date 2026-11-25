@@ -1,0 +1,599 @@
+
+/* GLOBAL STYLING */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #080d1b;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 30px;
+}
+
+/* HEADER */
+
+header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+header h1 {
+  font-size: 34px;
+  letter-spacing: 4px;
+  color: #5ee7ff;
+  margin-bottom: 12px;
+}
+
+header p {
+  color: #aab5cc;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+#status {
+  display: inline-block;
+  color: #5ee7ff;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 9px 18px;
+  border: 1px solid #254c65;
+  border-radius: 20px;
+  background: #101d30;
+}
+
+/* STATISTICS CARDS */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.stat {
+  background: #131d32;
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid #263955;
+  transition: 0.3s;
+}
+
+.stat:hover {
+  border-color: #5ee7ff;
+  transform: translateY(-3px);
+}
+
+.stat h3 {
+  color: #9aabc5;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.stat p {
+  font-size: 25px;
+  font-weight: bold;
+  color: #5ee7ff;
+}
+
+/* MAP SECTION */
+
+.map-section {
+  background: #131d32;
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid #263955;
+}
+
+.map-section h2 {
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+#map {
+  width: 100%;
+  height: 520px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0b1425;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  color: #9aabc5;
+  margin-top: 25px;
+  font-size: 13px;
+}
+
+#updated {
+  color: #5ee7ff;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 800px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container {
+    padding: 18px;
+  }
+
+  #map {
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 25px;
+  }
+
+  .stat p {
+    font-size: 21px;
+  }
+}
+
+/* CUSTOM ISS SATELLITE ICON */
+
+.iss-custom-icon {
+  background: transparent;
+  border: none;
+}
+
+.iss-pulse {
+  font-size: 30px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 8px #00e5ff);
+  animation: satellitePulse 1.5s infinite;
+}
+
+@keyframes satellitePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* ASTRONAUT CREW SECTION */
+
+.crew-section {
+  margin-top: 28px;
+  padding: 25px;
+  background: #131d32;
+  border: 1px solid #263955;
+  border-radius: 14px;
+}
+
+.crew-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.crew-header h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.crew-header p {
+  color: #9aabc5;
+  font-size: 13px;
+}
+
+#crew-count {
+  color: #5ee7ff;
+  font-size: 13px;
+}
+
+.crew-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.crew-card {
+  background: #0b1425;
+  border: 1px solid #263955;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.crew-card h3 {
+  color: #5ee7ff;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.crew-card p {
+  color: #aab5cc;
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+  .crew-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .crew-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* CITY DISTANCE CALCULATOR */
+
+.city-section {
+  margin-top: 25px;
+  padding: 25px;
+  background: #131d32;
+  border: 1px solid #263955;
+  border-radius: 14px;
+}
+
+.city-section h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.city-section > p {
+  color: #9aabc5;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.city-search {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.city-search input {
+  flex: 1;
+  min-width: 200px;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #263955;
+  background: #080d1b;
+  color: white;
+  outline: none;
+}
+
+.city-search button {
+  padding: 14px 22px;
+  border: none;
+  border-radius: 8px;
+  background: #00cbea;
+  color: #08101d;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#distance-result {
+  margin-top: 20px;
+  color: #5ee7ff;
+  font-size: 16px;
+}
+
+
+/* =========================================
+   MODERN SPACE DASHBOARD THEME
+========================================= */
+
+:root {
+  --bg-main: #080d19;
+  --bg-card: rgba(19, 29, 49, 0.82);
+  --bg-inner: rgba(9, 18, 34, 0.9);
+  --accent: #55e6ff;
+  --accent-blue: #648bff;
+  --text-main: #f4f7ff;
+  --text-muted: #9eacc5;
+  --border-glass: rgba(117, 177, 255, 0.18);
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 15% 0%, #172a4b 0%, transparent 40%),
+    radial-gradient(ellipse at 90% 50%, #101d3b 0%, transparent 38%),
+    var(--bg-main);
+
+  color: var(--text-main);
+  font-family: Inter, "Segoe UI", sans-serif;
+}
+
+/* MAIN CONTAINER */
+
+.container {
+  max-width: 1500px;
+  margin: auto;
+  padding: 35px 4%;
+}
+
+/* MAIN HEADER */
+
+header {
+  text-align: center;
+  padding: 35px 20px;
+}
+
+header h1 {
+  font-size: clamp(28px, 4vw, 48px);
+  letter-spacing: 5px;
+  font-weight: 800;
+
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #55e6ff,
+    #819aff
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header p {
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+/* TELEMETRY CARDS */
+
+.stats {
+  gap: 20px;
+}
+
+.stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: 18px;
+  padding: 26px;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+
+  transition: 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 35px rgba(85, 230, 255, 0.1);
+}
+
+.stat h3 {
+  color: var(--text-muted);
+  letter-spacing: 1.5px;
+  font-size: 12px;
+}
+
+.stat p {
+  color: var(--accent);
+  font-size: 27px;
+  font-weight: 800;
+}
+
+/* GENERAL PANELS */
+
+.crew-section,
+.city-section,
+.map-section,
+section.stats {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: 20px;
+  padding: 26px;
+  margin-top: 24px;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* SECTION HEADINGS */
+
+section h2 {
+  color: var(--text-main);
+  letter-spacing: 0.8px;
+  font-size: 19px;
+  margin-bottom: 12px;
+}
+
+/* ASTRONAUT CARDS */
+
+.crew-card {
+  background: var(--bg-inner);
+  border: 1px solid var(--border-glass);
+  border-radius: 14px;
+  padding: 22px;
+  transition: 0.3s ease;
+}
+
+.crew-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-blue);
+  background: rgba(22, 39, 67, 0.95);
+}
+
+.crew-card h3 {
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+/* CITY SEARCH */
+
+.city-search input {
+  background: #080f20;
+  border: 1px solid var(--border-glass);
+  border-radius: 10px;
+  color: white;
+  transition: 0.3s;
+}
+
+.city-search input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 15px rgba(85, 230, 255, 0.12);
+}
+
+.city-search button {
+  background: linear-gradient(
+    110deg,
+    #36c9f5,
+    #668bff
+  );
+
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.city-search button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(85, 230, 255, 0.2);
+}
+
+/* MAP */
+
+#map {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* CONNECTION STATUS */
+
+#status {
+  display: inline-block;
+  padding: 11px 20px;
+  border-radius: 30px;
+  background: rgba(35, 220, 160, 0.08);
+  border: 1px solid rgba(35, 220, 160, 0.25);
+  letter-spacing: 1px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 20px 4%;
+  }
+
+  header h1 {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .crew-section,
+  .city-section {
+    padding: 18px;
+  }
+
+  .city-search {
+    flex-direction: column;
+  }
+
+  .city-search button {
+    width: 100%;
+  }
+}
+
+/* ==================================
+   LIVE ALTITUDE TELEMETRY CHART
+================================== */
+
+.telemetry-section {
+  margin-top: 25px;
+  padding: 26px;
+  border-radius: 20px;
+  background: rgba(19, 29, 49, 0.82);
+  border: 1px solid rgba(117, 177, 255, 0.18);
+  backdrop-filter: blur(18px);
+}
+
+.telemetry-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.telemetry-heading h2 {
+  font-size: 19px;
+  color: #f4f7ff;
+}
+
+.telemetry-heading p {
+  color: #9eacc5;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.telemetry-live {
+  color: #35e6ad;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.chart-container {
+  position: relative;
+  height: 280px;
+  width: 100%;
+}
+
+.chart-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  color: #9eacc5;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .telemetry-section {
+    padding: 18px;
+  }
+
+  .chart-container {
+    height: 230px;
+  }
+
+  .telemetry-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

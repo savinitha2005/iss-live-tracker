@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d1b">
+  <title>ISS Live Tracker | Space Monitor</title>
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>ISS LIVE TRACKER</h1>
+      <p>International Space Station | Live Orbital Monitoring</p>
+      <span id="status">CONNECTING TO SATELLITE...</span>
+    </header>
+
+    <section class="stats">
+
+      <div class="stat">
+        <h3>LATITUDE</h3>
+        <p id="latitude">--</p>
+      </div>
+
+      <div class="stat">
+        <h3>LONGITUDE</h3>
+        <p id="longitude">--</p>
+      </div>
+
+      <div class="stat">
+        <h3>ALTITUDE</h3>
+        <p id="altitude">--</p>
+      </div>
+
+      <div class="stat">
+        <h3>ORBITAL SPEED</h3>
+        <p id="speed">--</p>
+      </div>
+
+    </section>
+
+<section class="crew-section">
+  <div class="crew-header">
+    <div>
+      <h2>ISS ASTRONAUT CREW</h2>
+      <p>People currently aboard the station</p>
+    </div>
+
+    <span id="crew-count">Loading crew...</span>
+  </div>
+
+  <div id="crew-list" class="crew-grid">
+    <p>Loading astronaut information...</p>
+  </div>
+</section>
+
+<section class="city-section">
+  <h2>ISS DISTANCE CALCULATOR</h2>
+
+  <p>Find how far the International Space Station is from your city.</p>
+
+  <div class="city-search">
+    <input
+      type="text"
+      id="city-input"
+      placeholder="Enter a city (e.g. Chennai)"
+    />
+
+    <button id="search-city">
+      Calculate Distance
+    </button>
+  </div>
+
+  <div id="distance-result">
+    Enter a city to calculate its distance from the ISS.
+  </div>
+</section>
+
+
+<!-- LIVE ALTITUDE MONITORING -->
+
+<section class="telemetry-section">
+
+  <div class="telemetry-heading">
+    <div>
+      <h2>LIVE ALTITUDE MONITORING</h2>
+      <p>Real-time ISS orbital altitude measurements</p>
+    </div>
+
+    <span class="telemetry-live">
+      ● LIVE DATA
+    </span>
+  </div>
+
+  <div class="chart-container">
+    <canvas id="altitudeChart"></canvas>
+  </div>
+
+  <div class="chart-footer">
+    <span>Data source: Where The ISS At API</span>
+    <span>Last 30 measurements</span>
+  </div>
+
+</section>
+
+
+    <section class="map-section">
+      <h2>LIVE ORBITAL POSITION</h2>
+      <div id="map"></div>
+    </section>
+
+    <footer>
+      Last updated: <span id="updated">Waiting for data...</span>
+    </footer>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+
+</body>
+</html>
